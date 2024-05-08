@@ -1,22 +1,24 @@
-$(document).ready(function() {
-    $('#tarefa-form').submit(function(event) {
-        event.preventDefault();
-        var nomeTarefa = $('#nome-tarefa').val();
-        if (nomeTarefa.trim() !== '') {
-            var listItem = $('<li><span class="tarefa-texto">' + nomeTarefa + '</span></li>');
-            var botoesContainer = $('<div class="botoes-container"></div>');
-            var concluidoButton = $('<button class="concluir-tarefa btn-concluir">Concluir</button>');
+$(document).ready(function(){
+    $('header button').click(function(){
+        $('form').slideDown();
+    })
 
-            listItem.append(botoesContainer);
-            botoesContainer.append(concluidoButton);
-            $('#itens').append(listItem);
-            $('#nome-tarefa').val('');
-        }
+
+    $('form').on('submit', function(e){
+        e.preventDefault();
+        const nova = $('#nova-tarefa').val();
+        const Item = $('<li></li>');
+
+        const tarefaText = document.createTextNode(nova);
+        Item.append(tarefaText);
+        Item.text(`${nova}`);
+
+        $('ul').append(Item);
+    
+        $(document).ready(function() {
+            $('li').click(function() {
+            $(this).css('text-decoration', 'line-through');
+            });
+        });    
     });
-
-    $('#itens').on('click', '.concluir-tarefa', function() {
-        var textoTarefa = $(this).closest('li').find('.tarefa-texto');
-        textoTarefa.toggleClass('tarefa-concluida');
-    });
-
 });

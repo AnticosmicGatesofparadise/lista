@@ -1,44 +1,21 @@
-.container {
+header {
+    padding: 16px;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 700px;
-    align-items: center;
-    padding: 20px;
-}
-
-body {
-    margin: 20px 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
+    text-align: center;
     justify-content: center;
-    align-items: center;
 }
 
-#itens li {
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    word-wrap: break-word;
-    word-break: break-all;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
+form {
+    text-align: center;
+    justify-content: center;
+    min-height: 100%;
 }
 
-.btn-concluir {
-    padding: 5px 10px;
+li {
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
     cursor: pointer;
-    padding: 14px;
-    border-radius: 20px;
-    margin-right: 10px;
-    background-size: cover;
-    background-image: 20px;
-}
-
-.tarefa-concluida {
-    text-decoration: line-through;
+    list-style: none;
+    margin-right: 50px;
 }
